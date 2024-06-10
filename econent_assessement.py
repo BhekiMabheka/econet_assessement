@@ -82,8 +82,6 @@ def call_voice_bundle_tariff(country, voice_df):
     else:
         return None
 
-   
-
 def generate_response(user_input):
     response = ""
     if "data1" in user_input.lower():
@@ -115,13 +113,6 @@ def generate_response(user_input):
 
 
 
-app = FastAPI()
 
-@app.post("/get_response/")
-async def get_response(username: str, question: str):
-    conversation_manager = ConversationManager()
-    response = generate_response(question)
-    conversation_manager.add_to_history(question, response)
-    return {"username": username, "response": response}
 
 
